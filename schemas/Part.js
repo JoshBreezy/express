@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const partSchema = new mongoose.Schema({
-    subdivision: [],
+    name: string,
+    subdivisions: [],
     score: number
 })
 

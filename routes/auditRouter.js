@@ -1,10 +1,11 @@
 const express = require('express');
 const Audit = require('../schemas/Audit');
+const authenticate = require('../authenticate');
 
 const auditRouter = express.Router();
 
 auditRouter.route('/')
-.post((req, res, next) => {
+.post(authenticate.verifyUser, (req, res, next) => {
     Audit.create(req.body)
     .then(audit => {
         console.log(audit);

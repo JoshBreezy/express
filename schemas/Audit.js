@@ -10,7 +10,14 @@ const auditSchema = new mongoose.Schema({
         type: Date,
         default: () => Date.now()
     },
-    location: String,
+    location: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: String,
+        required: true
+    },
     sections: [],
     totalScore: Number
 })
