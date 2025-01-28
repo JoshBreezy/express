@@ -24,9 +24,6 @@ app.use(passport.initialize());
 app.use('/audits', auditRouter);
 app.use('/locations', locationsRouter);
 app.use('/users', userRouter);
-
-
-//
  
 
 app.listen(3000, () => console.log('Server Started'));
