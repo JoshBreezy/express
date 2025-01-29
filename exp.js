@@ -23,5 +23,7 @@ app.use('/audits', auditRouter);
 app.use('/locations', locationsRouter);
 app.use('/users', userRouter);
  
-
-app.listen(3000, () => console.log('Server Started'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
