@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "exp.js",
   "scripts": {
-    "devStart": "nodemon exp.js"
+    "devStart": "nodemon exp.js",
+    "start": "node run exp.js"
   },
   "author": "",
   "license": "ISC",
