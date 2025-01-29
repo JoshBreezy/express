@@ -4,7 +4,7 @@
   "main": "exp.js",
   "scripts": {
     "devStart": "nodemon exp.js",
-    "start": "node run exp.js"
+    "start": "node exp.js"
   },
   "author": "",
   "license": "ISC",
