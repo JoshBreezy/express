@@ -18,6 +18,10 @@ const auditSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    authorID: {
+        type: String,
+        required: true
+    },
     sections: [],
     totalScore: Number
 })
