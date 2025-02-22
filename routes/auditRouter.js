@@ -16,7 +16,7 @@ auditRouter.route('/')
     .catch(err => next(err));
 })
 .get((req, res, next) => {
-    Audits.find()
+    Audit.find()
     .then(audits => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'applications/json')
