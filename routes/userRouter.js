@@ -5,6 +5,17 @@ const authenticate = require('../authenticate');
 
 const userRouter = express.Router();
 
+userRouter.route('/')
+.get((req, res, next) => {
+    User.find(req.query)
+    .then(user => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(user);
+    })
+    .catch(err => next(err));
+})
+
 userRouter.post('/signup', (req, res) => {
     User.register(
         new User({username: req.body.username, email: req.body.email}),
@@ -35,7 +46,8 @@ userRouter.post('/login', passport.authenticate('local', { session: false }), (r
         status: 'You are successfully logged in!',
         user: {
             _id: req.user._id,
-            admin: req.user.admin
+            admin: req.user.admin,
+            username: req.user.username
         }
     });
 });
