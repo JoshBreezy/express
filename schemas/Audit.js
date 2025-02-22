@@ -22,6 +22,11 @@ const auditSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    finalized: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
     sections: [],
     totalScore: Number
 })
