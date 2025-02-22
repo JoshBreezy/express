@@ -15,6 +15,15 @@ auditRouter.route('/')
     })
     .catch(err => next(err));
 })
+.get((req, res, next) => {
+    Audits.find()
+    .then(audits => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'applications/json')
+        res.json(audits);
+    })
+    .catch(err => next(err));
+})
 
 auditRouter.route('/:auditId')
 .get((req, res, next) => {
@@ -36,7 +45,6 @@ auditRouter.route('/:auditId')
         res.json(audit);
     })
     .catch(err => next(err))
-    
 })
 
 module.exports = auditRouter;
