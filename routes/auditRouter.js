@@ -36,7 +36,7 @@ auditRouter.route('/:auditId')
     })
     .catch(err => next(err))
 })
-.put((req, res, next) => {
+.put(authenticate.verifyUser,(req, res, next) => {
     Audit.findByIdAndUpdate(req.params.auditId, { $set: req.body }, { new: true })
     .then(audit => {
         console.log(audit);
