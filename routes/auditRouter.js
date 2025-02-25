@@ -52,6 +52,7 @@ auditRouter.route('/:auditId/pics')
         res.setHeader('Content-Type', 'application/json');
         res.json(pic._id);
     })
+    .catch(err => next(err));
 })
 
 module.exports = auditRouter;
