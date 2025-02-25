@@ -28,6 +28,7 @@ const auditSchema = new mongoose.Schema({
         required: true
     },
     sections: [],
+    pics: [],
     totalScore: Number
 })
 
