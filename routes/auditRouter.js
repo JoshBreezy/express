@@ -8,7 +8,6 @@ auditRouter.route('/')
 .post(authenticate.verifyUser, (req, res, next) => {
     Audit.create(req.body)
     .then(audit => {
-        console.log(audit);
         res.statusCode = 200;
         res.setHeader('Content-Type','application/json')
         res.json(audit);
@@ -29,7 +28,6 @@ auditRouter.route('/:auditId')
 .get((req, res, next) => {
     Audit.findById(req.params.auditId)
     .then(audit => {
-        console.log(audit);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.json(audit);
@@ -39,7 +37,6 @@ auditRouter.route('/:auditId')
 .put(authenticate.verifyUser,(req, res, next) => {
     Audit.findByIdAndUpdate(req.params.auditId, { $set: req.body }, { new: true })
     .then(audit => {
-        console.log(audit);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.json(audit);
