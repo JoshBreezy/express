@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const photoSchema = new mongoose.Schema({
-    data: String
+    pic: String
 });
 
 module.exports = mongoose.model('Photo', photoSchema);
