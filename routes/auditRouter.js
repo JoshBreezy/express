@@ -44,15 +44,5 @@ auditRouter.route('/:auditId')
     .catch(err => next(err))
 })
 
-auditRouter.route('/:auditId/pics')
-.put(authenticate.verifyUser, (req, res, next) => {
-    Audit.findByIdAndUpdate(req.params.auditId, {$set: req.body }, {new: true})
-    .then(pic => {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
-        res.json(pic._id);
-    })
-    .catch(err => next(err));
-})
 
 module.exports = auditRouter;
