@@ -5,7 +5,7 @@ const photoRouter = express.Router();
 
 photoRouter.route('/')
 .post((req, res, next) => {
-    Photo.Create(req.body)
+    Photo.create(req.body)
     .then(photo => {
         res.statusCode = 200;
         res.setHeader('Content-Type','application/json')
