@@ -1,4 +1,5 @@
 const express = require('express');
+const Pic = require('../schemas/Pic');
 
 const picsRouter = express.Router();
 
