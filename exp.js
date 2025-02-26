@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const auditRouter = require('./routes/auditRouter');
 const locationsRouter = require('./routes/locationRouter');
 const userRouter = require('./routes/userRouter');
-const picsRouter = require('./routes/picsRouter');
+const photoRouter = require('./routes/photoRouter');
 const cors = require('cors');
 const passport = require('passport');
 const config = require('./config.js');
@@ -23,7 +23,7 @@ app.use(passport.initialize());
 app.use('/audits', auditRouter);
 app.use('/locations', locationsRouter);
 app.use('/users', userRouter);
-app.use('/pics', picsRouter);
+app.use('/photos', photoRouter);
  
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
