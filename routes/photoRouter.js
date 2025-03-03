@@ -13,6 +13,8 @@ photoRouter.route('/')
     })
     .catch(err => next(err));
 })
+
+photoRouter.route('/:photoId')
 .get((req, res, next) => {
     Photo.findById(req.params.photoId)
     .then(photo => {
