@@ -13,5 +13,14 @@ photoRouter.route('/')
     })
     .catch(err => next(err));
 })
+.get((req, res, next) => {
+    Photo.findById(req.params.photoId)
+    .then(photo => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'applications/json')
+        res.json(photo);
+    })
+    .catch(err => next(err));
+})
 
 module.exports = photoRouter;
